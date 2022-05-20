@@ -1,0 +1,12 @@
+<h1><%= @list.name %></h1>
+
+<ul class="list-group">
+  <% @list.movies.each do |movie| %>
+    <li class="list-group-item"><%= movie.title %></li>
+  <% end %>
+    <% @bookmark.comment.each do |movie| %>
+    <li class="list-group-item"><%= movie.title %></li>
+  <% end %>
+
+<%=link_to "add new movie", new_list_bookmark_path(@list)%>
+<%=link_to "See lists", lists_path(@list)%>
