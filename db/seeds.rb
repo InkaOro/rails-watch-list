@@ -12,26 +12,26 @@
 # Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 # Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
-# puts "Cleaning DB"
-# Movie.destroy_all
-# List.destroy_all
+puts "Cleaning DB"
+Movie.destroy_all
+List.destroy_all
 
-# puts "Creating Movies..."
-# 50.times do
-#   movie = Movie.create(title: Faker::Movie.title, overview: Faker::Quote.famous_last_words, poster_url: Faker::Internet.url, rating: rand(1..10))
-#   puts "#{movie.title} created"
-# end
-
-# puts "#{Movie.count} movies created!"
-
-require "json"
-require "open-uri"
-
-url = "https://tmdb.lewagon.com/movie/top_rated"
-movies_serialized = URI.open(url).read
-movies = JSON.parse(movies_serialized)
-
-
-movies["results"].each do |movie|
-puts "#{movie["title"]} - #{movie["overview"]}"
+puts "Creating Movies..."
+50.times do
+  movie = Movie.create(title: Faker::Movie.title, overview: Faker::Quote.famous_last_words, poster_url: Faker::Internet.url, rating: rand(1..10))
+  puts "#{movie.title} created"
 end
+
+puts "#{Movie.count} movies created!"
+
+# require "json"
+# require "open-uri"
+
+# url = "https://tmdb.lewagon.com/movie/top_rated"
+# movies_serialized = URI.open(url).read
+# movies = JSON.parse(movies_serialized)
+
+
+# movies["results"].each do |movie|
+# puts "#{movie["title"]} - #{movie["overview"]}"
+# end
