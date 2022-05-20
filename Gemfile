@@ -55,3 +55,6 @@ gem "font-awesome-sass", "~> 5.15"
 gem "simple_form", github: "heartcombo/simple_form"
 
 gem 'faker'
+
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
