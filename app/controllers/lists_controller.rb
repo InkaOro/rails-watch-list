@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
 before_action :set_list, only: [ :show, :destroy ]
+# has_one_attached :photo
 
   def index
     @lists = List.all
